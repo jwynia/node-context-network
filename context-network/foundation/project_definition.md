@@ -13,23 +13,25 @@ This document defines the core purpose, goals, and scope of the Software Project
 
 ### Project Overview
 
-The Software Project Context Network is a specialized template for starting new software development projects with built-in LLM management and navigation capabilities. It provides a structured approach to managing the complex web of decisions, designs, and domain knowledge that underlies every software project, while maintaining a clear separation between planning artifacts and implementation code.
+The Node-TypeScript Context Network is a specialized template for starting new Node.js TypeScript projects with built-in LLM management and navigation capabilities. It provides a structured approach to managing the complex web of decisions, designs, and domain knowledge that underlies Node-TypeScript development, while maintaining a clear separation between planning artifacts (context network) and implementation code (app/ directory).
 
 ### Vision Statement
 
-To transform software development by creating a seamless bridge between human developers, AI agents, and project knowledge, enabling teams to build more maintainable, comprehensible, and evolvable software systems.
+To transform Node-TypeScript development by creating a seamless bridge between human developers, AI agents, and project knowledge, enabling teams to navigate the rapidly evolving Node.js ecosystem and build more maintainable, comprehensible, and evolvable TypeScript applications.
 
 ### Mission Statement
 
-The Software Project Context Network template provides development teams with a structured knowledge management system that captures the "why" behind software decisions, preserves institutional knowledge, facilitates onboarding, and enables AI-assisted development through clear separation of planning and implementation artifacts.
+The Node-TypeScript Context Network template provides development teams with a structured knowledge management system that captures the "why" behind Node-TypeScript decisions, preserves institutional knowledge about framework choices and configurations, facilitates onboarding to complex Node.js projects, and enables AI-assisted development through clear separation of planning and implementation artifacts.
 
 ### Project Objectives
 
-1. Provide a specialized context network structure optimized for software development projects
-2. Establish clear patterns for documenting architecture decisions, component designs, and technical processes
-3. Create navigation paths tailored to different software development roles and tasks
-4. Enable effective collaboration between human developers and AI agents
-5. Reduce knowledge silos and prevent the loss of critical project context
+1. Provide a specialized context network structure optimized for Node.js TypeScript projects
+2. Establish clear patterns for documenting Node-TypeScript architecture decisions, framework selections, and configuration choices
+3. Create navigation paths tailored to Node.js development roles and TypeScript-specific tasks
+4. Enable effective collaboration between human developers and AI agents in the Node.js ecosystem
+5. Reduce knowledge silos around framework choices, build configurations, and TypeScript patterns
+6. Document decision-making processes for the rapidly evolving Node.js ecosystem
+7. Preserve institutional knowledge about TypeScript configuration and tooling choices
 
 ### Success Criteria
 
@@ -46,44 +48,52 @@ The Software Project Context Network template provides development teams with a 
 
 #### In Scope
 
-- Context network structure specialized for software development
-- Templates for architecture decision records (ADRs)
-- Component documentation patterns
-- Process documentation templates
-- Technical debt tracking mechanisms
-- Navigation guides for different software development roles
-- Integration patterns with code repositories
-- Maintenance strategies for keeping documentation in sync with code
+- Context network structure specialized for Node.js TypeScript development
+- Templates for Node-TypeScript architecture decision records (ADRs)
+- Node.js component and module documentation patterns
+- TypeScript-specific process documentation templates
+- Node.js ecosystem technical debt tracking mechanisms
+- Navigation guides for Node.js development roles and TypeScript workflows
+- Integration patterns with Node.js project structures and package.json
+- Maintenance strategies for keeping documentation in sync with TypeScript code
+- Framework selection decision templates (Express, Fastify, Next.js, etc.)
+- TypeScript configuration and build tool decision frameworks
+- Node.js deployment and environment configuration guidance
+- Package management and dependency strategy documentation
 
 #### Out of Scope
 
-- Specific programming language or framework implementations
-- Actual software code or build systems
-- Deployment configurations
-- Testing frameworks
-- Continuous integration/continuous deployment (CI/CD) pipelines
+- Actual Node.js/TypeScript implementation code (belongs in app/ directory)
+- Specific framework boilerplate or starter code
+- Pre-configured build systems or bundlers
+- Specific testing framework implementations
+- Continuous integration/continuous deployment (CI/CD) pipeline configurations
 - Specific project management methodologies
+- Package.json files or node_modules (belongs in app/ directory)
 
 ### Stakeholders
 
 | Role | Responsibilities | Representative(s) |
 |------|-----------------|-------------------|
-| Software Developers | Use the context network alongside code development | Development teams |
-| Software Architects | Document architectural decisions and system design | Architecture teams |
-| Technical Leads | Ensure alignment between context network and implementation | Team leads |
-| New Team Members | Learn about the project through the context network | Onboarding developers |
-| AI Agents | Navigate and update the context network based on interactions | LLM assistants |
+| Node.js Developers | Use the context network alongside TypeScript development | Node.js development teams |
+| TypeScript Architects | Document Node-TypeScript architectural decisions and system design | Node.js architecture teams |
+| Technical Leads | Ensure alignment between context network and Node.js implementation | Node.js team leads |
+| New Team Members | Learn about the Node.js project through the context network | Onboarding Node.js developers |
+| AI Agents | Navigate and update the context network based on Node-TypeScript interactions | LLM assistants with Node.js knowledge |
+| DevOps Engineers | Reference deployment and environment configuration decisions | Infrastructure teams |
 
 ### Timeline
 
-This is a template project without specific timeline milestones. Each implementation will have its own timeline.
+This is a template project without specific timeline milestones. Each Node-TypeScript implementation will have its own timeline.
 
 ### Constraints
 
 - Must work with existing LLM agent capabilities and limitations
-- Should be compatible with standard version control systems
-- Must be language and framework agnostic
-- Should not require specialized tools beyond text editors and LLM agents
+- Should be compatible with standard version control systems (Git)
+- Must be Node.js and TypeScript ecosystem focused
+- Should not require specialized tools beyond text editors, LLM agents, and Node.js tooling
+- Must maintain separation between context network and app/ directory
+- Should work with common Node.js development environments
 
 ### Assumptions
 

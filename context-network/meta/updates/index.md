@@ -22,6 +22,22 @@ Updates related to the actual content, information, and documentation within the
 
 ## Recent Updates
 
+### Research-Based Node.js Best Practices Enhancement - 2025-06-26
+**Category:** Content
+**Status:** Completed
+
+Enhanced the Node-TypeScript context network template with comprehensive, research-based guides for security and TypeScript configuration, incorporating current OWASP recommendations and industry best practices.
+
+[Link to full update](./content/research_based_enhancements.md)
+
+### Node-TypeScript Specialization - 2025-06-26
+**Category:** Structure
+**Status:** Completed
+
+Specialized the software project context network template for Node.js TypeScript projects with framework-specific guidance, decision templates, and Node.js ecosystem focus.
+
+[Link to full update](./structure/node_typescript_specialization.md)
+
 ### Software Project Context Network Customization - 2025-06-05
 **Category:** Structure
 **Status:** Completed

@@ -1,19 +1,41 @@
-# Software Project Context Network
-This project is a starter template specifically designed for software development projects with built-in LLM management and navigation capabilities (more info at https://jwynia.github.io/context-networks/). It provides a structured approach to managing the complex web of decisions, designs, and domain knowledge that underlies every software project.
+# Node-TypeScript Context Network Template
+This project is a starter template specifically designed for Node.js TypeScript projects with built-in LLM management and navigation capabilities (more info at https://jwynia.github.io/context-networks/). It provides a structured approach to managing the complex web of decisions, designs, and domain knowledge that underlies Node-TypeScript development.
 
-Unlike generic context networks, this template is tailored to address the unique knowledge management challenges of software development: code evolves rapidly, technical decisions have long-lasting impacts, team knowledge is often implicit, and the gap between "how we built it" and "what we built" creates dangerous knowledge silos.
+Unlike generic context networks, this template is tailored to address the unique knowledge management challenges of Node-TypeScript development: rapid ecosystem evolution, framework selection decisions, TypeScript configuration complexity, build tool choices, and the gap between "how we architected it" and "what we built" creates dangerous knowledge silos in the fast-moving Node.js ecosystem.
+
+## Project Structure
+
+This template uses a clear separation between planning and implementation:
+
+```
+project-root/
+├── .context-network.md          # Discovery file
+├── README.md                    # This file
+├── .gitignore                   # Root-level git ignores
+├── .devcontainer/               # Development container config
+├── context-network/             # All planning & architecture docs
+└── app/                         # Your Node-TypeScript project goes here
+```
+
+The `app/` directory is where your actual Node.js TypeScript project will live - everything that would normally be in a Node project root. This keeps the context network and development tooling separate from your application code.
 
 ## Getting Started
-To use this software project context network:
 
-1. **Clone this template** for your new software project
+To use this Node-TypeScript context network template:
+
+1. **Clone this template** for your new Node-TypeScript project
 2. **Connect with an LLM agent** that has file access to all files in the project folder (via IDE coding tools like Cursor or VSCode with Cline)
 3. **Set up the prompts** (see below) to ensure the agent understands context networks
-4. **Start a planning conversation** describing your software project, goals, architecture, and constraints
-5. **Let the agent enhance the context network** with your project-specific information
-6. **Begin development tasks** with clear separation between planning (context network) and implementation (codebase)
+4. **Initialize your Node project** in the `app/` directory using your preferred method:
+   - `cd app && npm init` for a basic Node project
+   - `cd app && npx create-next-app@latest .` for Next.js
+   - `cd app && npx create-vite@latest . --template vanilla-ts` for Vite
+   - Or any other Node-TypeScript framework initialization
+5. **Start a planning conversation** describing your Node-TypeScript project goals, architecture, and constraints
+6. **Let the agent enhance the context network** with your project-specific information
+7. **Begin development tasks** with clear separation between planning (context network) and implementation (app/)
 
-This template maintains a clear boundary between knowledge artifacts (context network) and implementation artifacts (codebase), allowing your team to document "why" and "how" separately from the code that represents "what is."
+This template maintains a clear boundary between knowledge artifacts (context network) and implementation artifacts (app/), allowing your team to document "why" and "how" separately from the Node-TypeScript code that represents "what is."
 
 ## Cost
 Because context networks are a relatively cutting-edge approach to collaboration with LLM AI agents, these tools do cost money and some of the best of them can cost more money than you may be expecting. The costs on such things are dropping and much of what we're doing with context networks is figuring out the ways to work that will be more widespread next year and beyond, when these costs drop. If these tools are too expensive for your budget, that probably means you need to wait a bit.
@@ -29,13 +51,16 @@ For whatever agent you use, you need to include instructions in the system promp
 
 Add it in either your agent's configuration screen or via its file-based prompt management system.
 
-### Software-Specific Documentation Patterns
-This template includes specialized patterns for software documentation:
+### Node-TypeScript Specific Documentation Patterns
+This template includes specialized patterns for Node-TypeScript documentation:
 
-1. **Architecture Decision Records (ADRs)** - Document important technical decisions, their context, and consequences
-2. **Component Documentation** - Structured documentation of software components and their interfaces
-3. **Process Documentation** - Clear documentation of development, testing, and deployment processes
-4. **Technical Debt Registry** - Track known compromises and their planned resolution
+1. **Framework Selection Decision Records** - Document Node.js framework choices (Express vs Fastify vs Next.js)
+2. **TypeScript Configuration Decisions** - Document compiler settings, strict mode choices, and type strategy
+3. **API Design Guidelines** - Node.js specific REST/GraphQL API patterns with TypeScript interfaces
+4. **Package Management Strategy** - Document npm/yarn/pnpm choices and dependency management
+5. **Build Tool Configuration** - Document bundling, compilation, and deployment strategies
+6. **Testing Strategy** - Jest/Vitest configuration and Node.js testing patterns
+7. **Technical Debt Registry** - Track Node.js ecosystem updates and TypeScript migration needs
 
 ### Plan/Act and Specific Scope
 Cline and many other agents have multiple modes, usually offering one that lets you have a conversation with it separate from it taking action on files. In Cline, that's "Plan". In that mode, it won't make any changes to your files.
@@ -58,17 +83,21 @@ Interrupt, flip to Plan mode, and ask things like:
 ### Retrospective
 At the end of tasks and periodically AS a new task, ask how things could be improved. For task end, "What from this conversation and task should be documented in the context network?" For periodic retrospectives, "What have we learned in this project that could be used to improve the context network for our efforts going forward?"
 
-## Software Project Success Metrics
+## Node-TypeScript Project Success Metrics
 
 This context network template helps measure success through:
 
-- **Time to first meaningful contribution** for new developers
-- **Frequency of "archaeology" requests** (digging for lost knowledge)
-- **Documentation coverage** of major components
-- **Decision traceability** percentage
-- **Documentation update frequency** relative to code changes
-- **Developer confidence** in making changes
-- **Stakeholder understanding** of system state
-- **Reduction in repeated mistakes**
+- **Time to first meaningful contribution** for new Node.js developers
+- **Framework selection decision speed** and confidence
+- **TypeScript configuration consistency** across team members
+- **Frequency of "archaeology" requests** (digging for lost Node.js knowledge)
+- **Documentation coverage** of APIs, components, and TypeScript interfaces
+- **Decision traceability** for framework and tooling choices
+- **Documentation update frequency** relative to package.json and code changes
+- **Developer confidence** in making Node.js ecosystem updates
+- **Stakeholder understanding** of system architecture and technology choices
+- **Reduction in repeated Node.js/TypeScript configuration mistakes**
+- **Package dependency management** clarity and security
+- **Build and deployment process** understanding and reliability
 
-By maintaining a well-structured context network alongside your codebase, your team builds a shared brain that enables faster onboarding, better decisions, and more confident evolution of complex software systems.
+By maintaining a well-structured context network alongside your Node-TypeScript codebase, your team builds a shared brain that enables faster onboarding, better technology decisions, and more confident evolution of complex Node.js applications in the rapidly changing ecosystem.

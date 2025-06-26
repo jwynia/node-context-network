@@ -1,7 +1,7 @@
-# API Design Guide
+# Node-TypeScript API Design Guide
 
 ## Purpose
-This document provides guidelines and standards for designing APIs across the system to ensure consistency, usability, and maintainability.
+This document provides guidelines and standards for designing APIs in Node.js TypeScript projects to ensure consistency, usability, and maintainability across the Node.js ecosystem.
 
 ## Classification
 - **Domain:** Cross-Cutting
@@ -11,32 +11,116 @@ This document provides guidelines and standards for designing APIs across the sy
 
 ## Content
 
-### API Design Principles
+### Node-TypeScript API Design Principles
 
-These core principles should guide all API design decisions:
+These core principles should guide all Node-TypeScript API design decisions:
 
-1. **Consistency**
-   APIs should follow consistent patterns, naming conventions, and behaviors across the system.
+1. **Type Safety First**
+   Leverage TypeScript's type system to catch errors at compile time and provide excellent developer experience.
 
-2. **Simplicity**
+2. **Consistency**
+   APIs should follow consistent patterns, naming conventions, and behaviors across the Node.js application.
+
+3. **Simplicity**
    APIs should be as simple as possible but no simpler. Favor intuitive designs that are easy to understand and use correctly.
 
-3. **Evolvability**
-   APIs should be designed to evolve over time without breaking existing clients.
+4. **Evolvability**
+   APIs should be designed to evolve over time without breaking existing clients, using TypeScript versioning strategies.
 
-4. **Discoverability**
-   APIs should be self-documenting and easy to explore, with clear patterns and conventions.
+5. **Discoverability**
+   APIs should be self-documenting through TypeScript types and easy to explore with IDE support.
 
-5. **Robustness**
-   APIs should handle errors gracefully and provide meaningful feedback to clients.
+6. **Robustness**
+   APIs should handle errors gracefully using Node.js error patterns and provide meaningful feedback to clients.
 
-6. **Security by Design**
-   Security considerations should be built into APIs from the beginning, not added as an afterthought.
+7. **Security by Design**
+   Security considerations should be built into APIs from the beginning, leveraging Node.js security best practices.
 
-7. **Performance Awareness**
-   APIs should be designed with performance considerations in mind, avoiding unnecessary overhead.
+8. **Performance Awareness**
+   APIs should be designed with Node.js performance characteristics in mind, avoiding blocking operations.
 
 ### API Styles
+
+#### Node.js Express/Fastify REST API Guidelines
+
+For Node.js RESTful HTTP APIs using Express.js or Fastify:
+
+**TypeScript Interface Design:**
+```typescript
+// Define clear interfaces for request/response
+interface CreateUserRequest {
+  name: string;
+  email: string;
+  age?: number;
+}
+
+interface UserResponse {
+  id: string;
+  name: string;
+  email: string;
+  age?: number;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+// Use generic response wrapper
+interface ApiResponse<T> {
+  success: boolean;
+  data?: T;
+  error?: ApiError;
+  meta?: ResponseMeta;
+}
+```
+
+**Express.js TypeScript Patterns:**
+```typescript
+import { Request, Response, NextFunction } from 'express';
+
+// Typed route handlers
+app.post('/users', async (req: Request<{}, UserResponse, CreateUserRequest>, res: Response<ApiResponse<UserResponse>>) => {
+  try {
+    const user = await userService.create(req.body);
+    res.status(201).json({
+      success: true,
+      data: user
+    });
+  } catch (error) {
+    next(error);
+  }
+});
+
+// Middleware with proper typing
+const validateUser = (req: Request<{}, {}, CreateUserRequest>, res: Response, next: NextFunction) => {
+  // Validation logic
+  next();
+};
+```
+
+**Fastify TypeScript Patterns:**
+```typescript
+import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
+
+// Schema-first approach with TypeScript
+const createUserSchema = {
+  body: {
+    type: 'object',
+    required: ['name', 'email'],
+    properties: {
+      name: { type: 'string' },
+      email: { type: 'string', format: 'email' },
+      age: { type: 'number', minimum: 0 }
+    }
+  }
+};
+
+fastify.post<{ Body: CreateUserRequest }>('/users', {
+  schema: createUserSchema,
+  handler: async (request, reply) => {
+    const user = await userService.create(request.body);
+    return { success: true, data: user };
+  }
+});
+```
 
 #### REST API Guidelines
 
